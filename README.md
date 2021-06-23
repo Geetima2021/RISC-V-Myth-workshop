@@ -29,6 +29,20 @@ Each base integer set is characterized by the  width  of the register (XLEN) and
 
 ### GNU compile toolchain
 
+A toolchain is a set of programming tools that is used to perform a complex development task or for creating a software product https://en.wikipedia.org/wiki/Toolchain.  A simple software development toolchain may consist of 
+
+1. Compiler and linker which transform the source code into an executable program
+2. Libraries which provide interfaces to the operating system 
+3. Debugger which is used to test and debug created program
+
+The GNU compile toolchain is a set of prgramming tools produced by GNU project and are used in serial manner for development of software appliactions and operating system https://en.wikipedia.org/wiki/GNU_toolchain. RISC-V is one such toolchain which supports C and C++ cross compiler. It supports two build modes: a generic ELF/Newlib toolchain and a more sophisticated Linux-ELF/glibc toolchain. The details of installing and using in local system can be obtained from this [repository](https://github.com/riscv/riscv-gnu-toolchain). 
+
+To start off with the labwork a c program to compile sum from 1 to n was written whose file is in the codes folder as [sum1to9.c](https://github.com/Geetima2021/RISC-V-Myth-workshop/tree/main/Codes). 
+
+
+
+
+
 
 
 
