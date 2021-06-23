@@ -41,7 +41,7 @@ To start off a c program to compile sum from 1 to n was written whose file is in
 
 In case RISC-V GNU toolchain the follwing commands are executed
 
-- To use the RISC-V gcc compiler or simulator type
+- To use the RISC-V gcc compiler or simulator, type
 ```bash
 riscv64-unknown-elf-gcc <-01/-Ofast> -mabi=lp64 -march=rv64i -o <object filename.o> <filename.c>
 ```
@@ -54,9 +54,10 @@ riscv64-unknown-elf-objdump <object file> -d <object filename.o>
 ```
 ![C2](https://user-images.githubusercontent.com/63381455/123098440-c73af700-d44e-11eb-95e1-6919e21f7846.png)
 
-The deassemble file with the main part of the program highlighted is as shown below
+The deassemble file with the highlighted main part of the program  is as shown below
 
 ![objfile](https://user-images.githubusercontent.com/63381455/123098447-c904ba80-d44e-11eb-9606-b08c4fb4c39a.png)
+
 - To use SPIKE simulator to run obj file
 
 ```bash
