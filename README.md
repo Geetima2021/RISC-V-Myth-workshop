@@ -4,10 +4,10 @@
 # Table of contents
 
 - [Overview](#overview)
-- [Day 1 : Introduction to RISC-V ISA](#Day 1 : Introduction to RISC-V ISA])
-  - [GNU compiler toolchain](#GNU compiler toolchain)
-  - [Installation of GNU toolchain](#Installation of GNU toolchain)
-- 
+- [Day 1 : Introduction to RISC-V ISA](#Day1)
+  - [GNU compiler toolchain](#GNU)
+  - [Installation of GNU toolchain](#Installation)
+- [Introduction to ABI](#ABI)
 
 
 # Overview
@@ -76,7 +76,7 @@ and we can decide the pc till where the debug is done
 ```bash
 until pc 0 < pc of your choice> 
 ```
-and thereafter  any register can be viewed using the command
+and thereafter  any register content can be viewed using the command
 
 ```bash
 reg 0 <register name>
