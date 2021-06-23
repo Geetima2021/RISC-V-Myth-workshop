@@ -4,7 +4,9 @@
 # Table of contents
 
 - [Overview](#overview)
-- [Day 1 : Introduction to RISC-V ISA and GNU compiler toolchain](#intro)
+- [Day 1 : Introduction to RISC-V ISA](#Day 1 : Introduction to RISC-V ISA])
+  - [GNU compiler toolchain](#GNU compiler toolchain)
+  - [Installation of GNU toolchain](#Installation of GNU toolchain)
 - 
 
 
@@ -29,16 +31,67 @@ Each base integer set is characterized by the  width  of the register (XLEN) and
 
 ### GNU compile toolchain
 
-A toolchain is a set of programming tools that is used to perform a complex development task or for creating a software product https://en.wikipedia.org/wiki/Toolchain.  A simple software development toolchain may consist of 
+The GNU compile toolchain is a set of programming tools in LINUX system that can be use for compiling a code to generate certain executable program, library and debugger and whose detail can be found in [1](https://en.wikipedia.org/wiki/Toolchain) and [2](https://en.wikipedia.org/wiki/GNU_toolchain). RISC-V is one such toolchain which supports C and C++ cross compiler. It supports two build modes: a generic ELF/Newlib toolchain and a more sophisticated Linux-ELF/glibc toolchain and [here](https://github.com/riscv/riscv-gnu-toolchain) the github link for the same can be found. 
 
-1. Compiler and linker which transform the source code into an executable program
+<!---1. Compiler and linker which transform the source code into an executable program
 2. Libraries which provide interfaces to the operating system 
-3. Debugger which is used to test and debug created program
+3. Debugger which is used to test and debug created program--->
 
-The GNU compile toolchain is a set of prgramming tools produced by GNU project and are used in serial manner for development of software appliactions and operating system https://en.wikipedia.org/wiki/GNU_toolchain. RISC-V is one such toolchain which supports C and C++ cross compiler. It supports two build modes: a generic ELF/Newlib toolchain and a more sophisticated Linux-ELF/glibc toolchain. The details of installing and using in local system can be obtained from this [repository](https://github.com/riscv/riscv-gnu-toolchain). 
+To start off a c program to compile sum from 1 to n was written whose file is in the codes folder as [sum1to9.c](https://github.com/Geetima2021/RISC-V-Myth-workshop/tree/main/Codes). The program is compiled using both the gcc compiler and RISC-V compiler. For normal gcc compiliation simply `gcc <filename.c>` is executed in the terminal generating an object file `a.out` and `./a.out` is use to further run it. 
 
-To start off with the labwork a c program to compile sum from 1 to n was written whose file is in the codes folder as [sum1to9.c](https://github.com/Geetima2021/RISC-V-Myth-workshop/tree/main/Codes). 
+In case RISC-V GNU toolchain the follwing commands are executed
 
+- To use the RISC-V gcc compiler or simulator type
+```bash
+riscv64-unknown-elf-gcc <-01/-Ofast> -mabi=lp64 -march=rv64i -o <object filename.o> <filename.c>
+```
+![C1](https://user-images.githubusercontent.com/63381455/123098306-a4a8de00-d44e-11eb-8a44-3666ea943164.png)
+
+- To deassemble the object file 
+
+```bash
+riscv64-unknown-elf-objdump <object file> -d <object filename.o>
+```
+![C2](https://user-images.githubusercontent.com/63381455/123098440-c73af700-d44e-11eb-95e1-6919e21f7846.png)
+
+The deassemble file with the main part of the program highlighted is as shown below
+
+![objfile](https://user-images.githubusercontent.com/63381455/123098447-c904ba80-d44e-11eb-9606-b08c4fb4c39a.png)
+- To use SPIKE simulator to run obj file
+
+```bash
+spike pk <object filename.o>
+```
+The figure below shows the output for sum 1 to 100.
+
+![C3](https://user-images.githubusercontent.com/63381455/123099143-88f20780-d44f-11eb-8e8c-634349cf6ab6.png)
+
+- The SPIKE simulator can be used to manually debug the code
+```bash
+spike - d pk <object filename.o> 
+```
+and we can decide the pc till where the debug is done
+
+```bash
+until pc 0 < pc of your choice> 
+```
+and thereafter  any register can be viewed using the command
+
+```bash
+reg 0 <register name>
+```
+The spike debugger along with a register is as shown below
+
+![C4](https://user-images.githubusercontent.com/63381455/123113626-513d8c80-d45c-11eb-9af0-5fa579c0920a.png)
+
+Information on the RISC-V options is available in [RISC-V options](https://gcc.gnu.org/onlinedocs/gcc/RISC-V-Options.html) and [here](https://www.sifive.com/blog/all-aboard-part-1-compiler-args).
+
+### Installation of GNU toolchain
+
+For installation of GNU toolchain in your local system visit
+
+1. [RISC-V GNU toolcahain](http://hdlexpress.com/RisKy1/How2/toolchain/toolchain.html)
+2. [RISC-V workshop collaterals](https://github.com/kunalg123/riscv_workshop_collaterals)
 
 
 
