@@ -87,6 +87,12 @@ The spike debugger along with a register is as shown below
 
 Information on the RISC-V options is available in [RISC-V options](https://gcc.gnu.org/onlinedocs/gcc/RISC-V-Options.html) and [here](https://www.sifive.com/blog/all-aboard-part-1-compiler-args).
 
+Also certain nomenlature are also discussed starting from bits to doubleword. The chronological order of the same along with the RISC-V signed number and unsigned number ranges is as shown in the figure below
+
+![I1](https://user-images.githubusercontent.com/63381455/123209636-8a1e4580-d4de-11eb-9b4a-4d9e5fa3b949.png)
+
+Following the above, c program for both signed and unsigned numbers are written whose codes are [here](https://github.com/Geetima2021/RISC-V-Myth-workshop/tree/main/Codes) and the output of the programs can be viewed in the following [folder](https://github.com/Geetima2021/RISC-V-Myth-workshop/tree/main/Images).
+
 ### Installation of GNU toolchain
 
 For installation of GNU toolchain in your local system visit
@@ -94,8 +100,14 @@ For installation of GNU toolchain in your local system visit
 1. [RISC-V GNU toolcahain](http://hdlexpress.com/RisKy1/How2/toolchain/toolchain.html)
 2. [RISC-V workshop collaterals](https://github.com/kunalg123/riscv_workshop_collaterals)
 
+# Introduction to ABI
+
+A number of interface are present between the application program and hardware as shown in [figure] below. Application binary interface or ABI is an interface, that helps programs access system hardware and services. An ABI consists of two parts - one is the user instruction itself and the second is the system call interface through the operating system. Through the system call interface the application program can directly access the ISA via the ABI registers and hence  ABI is also known system call interface. RISC-V consisits  of 32 registers and Application  programmer can access the register through their ABI name which  is as shown in table below. 
+
+![interface](https://user-images.githubusercontent.com/63381455/123235164-408f2400-d4f9-11eb-9fa2-09ca639fac9c.png)
 
 
+![ABI](https://user-images.githubusercontent.com/63381455/123235177-4258e780-d4f9-11eb-8308-e543d68b57f0.png)
 
 
 
