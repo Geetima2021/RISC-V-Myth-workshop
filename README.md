@@ -37,7 +37,7 @@ The GNU compile toolchain is a set of programming tools in LINUX system that can
 2. Libraries which provide interfaces to the operating system 
 3. Debugger which is used to test and debug created program--->
 
-To start off a c program to compile sum from 1 to n was written whose file is in the codes folder as [sum1to9.c](https://github.com/Geetima2021/RISC-V-Myth-workshop/tree/main/Codes). The program is compiled using both the gcc compiler and RISC-V compiler. For normal gcc compiliation simply `gcc <filename.c>` is executed in the terminal generating an object file `a.out` and `./a.out` is use to further run it. 
+To start off a c program to compile sum from 1 to n was written whose file is in the codes folder as [sum1to9.c](https://github.com/Geetima2021/RISC-V-Myth-workshop/tree/main/Codes/sum1to9.c). The program is compiled using both the gcc compiler and RISC-V compiler. For normal gcc compiliation simply `gcc <filename.c>` is executed in the terminal generating an object file `a.out` and `./a.out` is use to further run it. 
 
 In case RISC-V GNU toolchain the follwing commands are executed
 
@@ -102,13 +102,16 @@ For installation of GNU toolchain in your local system visit
 
 # Introduction to ABI
 
-A number of interface are present between the application program and hardware as shown in [figure] below. Application binary interface or ABI is an interface, that helps programs access system hardware and services. An ABI consists of two parts - one is the user instruction itself and the second is the system call interface through the operating system. Through the system call interface the application program can directly access the ISA via the ABI registers and hence  ABI is also known system call interface. RISC-V consisits  of 32 registers and Application  programmer can access the register through their ABI name which  is as shown in table below. 
+A number of interface are present between the application program and hardware as shown in [figure](https://github.com/Geetima2021/RISC-V-Myth-workshop/tree/main/Images/interface.png). Application binary interface or ABI is an interface, that helps programs access system hardware and services. An ABI consists of two parts - one is the user instruction itself and the second is the system call interface through the operating system. Through the system call interface the application program can directly access the ISA via the ABI registers and hence  ABI is also known system call interface. RISC-V consisits  of 32 registers and Application  programmer can access the register through their ABI name which  is as shown in table below. 
 
-![interface](https://user-images.githubusercontent.com/63381455/123235164-408f2400-d4f9-11eb-9fa2-09ca639fac9c.png)
+<!---![interface](https://user-images.githubusercontent.com/63381455/123235164-408f2400-d4f9-11eb-9fa2-09ca639fac9c.png)--->
 
 
 ![ABI](https://user-images.githubusercontent.com/63381455/123235177-4258e780-d4f9-11eb-8308-e543d68b57f0.png)
 
+
+
+Thereafter, the c program for summation of 1 to 9 is modified using the ABI function calls 
 
 
 
