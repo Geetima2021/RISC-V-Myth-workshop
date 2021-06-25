@@ -8,6 +8,7 @@
   - [GNU compiler toolchain](#GNU)
   - [Installation of GNU toolchain](#Installation)
 - [Introduction to ABI](#ABI)
+  - [Combinational logic in TL verilg using Makerchip IDE](#combinational)
 
 
 # Overview
@@ -112,4 +113,20 @@ Thereafter, the c program for summation of 1 to 9 is modified using the ABI func
 
 ![op_customC](https://user-images.githubusercontent.com/63381455/123276259-a2b04f00-d522-11eb-9fa6-5fb4c3050cff.png)
  
+# Digital logic with TL verilog and Makerchip
+
+[Makerchip](http://makerchip.com/) introduces ground breaking capabilities for advanced Verilog design, it also makes circuit design easy fun! For this Makerchip provides free and instant access to the latest tools (both the open-source and proprietary ones) from the browser in a local system.  One can easily code, compile, simulate, and debug verilog design by using the makerchip IDE platform from the browrser iteslf. Makerchip platform provides a seamless design experience as the code,log file, block diagrams, waveforms, and novel visualisation are highly organised, tightly integrated and debugging is easy.
+
+Makerchip supports the emerging Transaction-Level Verilog or TL-Verilog standard which is a huge step forward as it allows simpler coding. As the coding becomes lesser faster development, fewer bugs, easier maintenance, and better quality silicon becomes possible.  TL-Verilog adds powerful constructs for pipelines and transactions. A number of examples available in Makerchip which can be found [here](https://makerchip.com/sandbox/).
+
+## Combinational logic in TL verilg using Makerchip IDE
+ 
+Initiatlly we started with understanding the Makerchip IDE platform by trying some basic digital logic gate with inverter being the standard one. In TL verilog we simply code the logic itself viz `$out =!$in1` without requiring to declare the variables separately and $in assignment is also not required. The output of the above is as shown in figure below. We note that simultaneous highlighting of the variable is possible at the output.
+
+![inverter](https://user-images.githubusercontent.com/63381455/123416539-502f6b00-d5d4-11eb-8521-25ab4e68c01e.png)
+
+Apart from inverter the logic gates, multiplexer, counter etc are also coded using TL verilog. The logic gates code along with the output is as shown in figure and we can see that assigment of inputs is not necessary in TL verilog. Other codes and output cab be viewed [here](https://github.com/Geetima2021/RISC-V-Myth-workshop/tree/main/Images).
+
+![Logic gates](https://user-images.githubusercontent.com/63381455/123433254-deade780-d5e8-11eb-8c36-629c5e99f808.png)
+
 
