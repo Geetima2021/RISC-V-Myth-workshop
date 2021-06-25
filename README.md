@@ -10,6 +10,8 @@
 - [Introduction to ABI](#ABI)
   - [Combinational logic in TL verilg using Makerchip IDE](#combinational)
   - [Combinational Calculator](#cal)
+  - [Sequential Calculator](#seq)
+  - [Pipelining](#pipe)
 
 
 # Overview
