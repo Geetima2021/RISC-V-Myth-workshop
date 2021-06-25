@@ -9,13 +9,14 @@
   - [Installation of GNU toolchain](#Installation)
 - [Introduction to ABI](#ABI)
   - [Combinational logic in TL verilg using Makerchip IDE](#combinational)
+  - [Combinational Calculator](#cal)
 
 
 # Overview
 
-The 5 day RISC-V Myth (microprocessor for you in thirty hours) workshop is conducted by [VLSI system design](https://www.vlsisystemdesign.com/riscv-based-myth/?v=a98eef2a3105) and [Redwood EDA](https://www.redwoodeda.com/tl-verilog). This workshop starts from the beginner level of understanding the basic software to hardware integration,by writing a simple c program for the assembly language  program to finally built a RISC-V pipelinened architecture for the same. As VSD has an intelligent cloud based VSDA-IAT platform the entire workshop contents, assessments and initial labs are carried out in the platform itself. Thereafter the TL based Makerchip platform as given in the github repository https://github.com/stevehoover/RISC-V_MYTH_Workshop for RTL implementation of RISC-V core. Prior to the implemantation of the core some simple digital logics along with a calculator was implemented in  Makerchip platform for better understanding of the platform and TL verilog.
+The 5 day RISC-V Myth (microprocessor for you in thirty hours) workshop is conducted by [VLSI system design](https://www.vlsisystemdesign.com/riscv-based-myth/?v=a98eef2a3105) and [Redwood EDA](https://www.redwoodeda.com/tl-verilog). This workshop starts from the beginner level of understanding the basic software to hardware integration,by writing a simple c program for the assembly language  program to finally built a RISC-V pipelinened architecture for the same. As VSD has an intelligent cloud based VSDA-IAT platform the entire workshop contents, assessments and initial labs are carried out in the platform itself. Thereafter the TL based Makerchip platform as given in the github repository https://github.com/stevehoover/RISC-V_MYTH_Workshop for RTL implementation of RISC-V core. Prior to the implemantation of the core some simple digital logics along with a calculator was implemented in Makerchip platform for better understanding of the platform and TL verilog.
 
-# Day 1 : Introduction to RISC-V ISA and GNU compiler toolchain
+# Introduction to RISC-V ISA
 
 RISC-V ISA is a base integer ISA and must be present in any implemenatation along with some optional extension. The RISC-V has been designed to support extensive customization and specialization which can be extended  with  one  or  more  optional  instruction-set  extensions,  but  the  base  integer instructions cannot be redefine. The different instructions included in RISC-V are listed below.
 
@@ -125,8 +126,29 @@ Initiatlly we started with understanding the Makerchip IDE platform by trying so
 
 ![inverter](https://user-images.githubusercontent.com/63381455/123416539-502f6b00-d5d4-11eb-8521-25ab4e68c01e.png)
 
-Apart from inverter the logic gates, multiplexer, counter etc are also coded using TL verilog. The logic gates code along with the output is as shown in figure and we can see that assigment of inputs is not necessary in TL verilog. Other codes and output cab be viewed [here](https://github.com/Geetima2021/RISC-V-Myth-workshop/tree/main/Images).
+Apart from inverter the logic gates, multiplexer, vectors are also coded using TL verilog. The logic gates code along with the output is as shown in figure and we can see that assigment of inputs is not necessary in TL verilog. Other sanpshot can be viewed [here](https://github.com/Geetima2021/RISC-V-Myth-workshop/tree/main/Images).
 
 ![Logic gates](https://user-images.githubusercontent.com/63381455/123433254-deade780-d5e8-11eb-8c36-629c5e99f808.png)
 
+## Combinational calculator
 
+Now a lab on combinational calculator is implemented that can perform `+, -, *, /` on two input values. The snapshot of the code, waveform and diagram is as shown below.
+ 
+![combi_cal](https://user-images.githubusercontent.com/63381455/123447880-f50f6f80-d5f7-11eb-9102-af976e8ea547.png)
+
+## Sequential calculator
+
+First the Fibionacci series is discussed and the single line code `$num[31:0] = $reset ? 1 : (>>1$num + >>2$num);` implementing it is written. Here the concept of ahead operator `>>1 and >>2`which provides the output 1 cycle and 2 cycle before comes into the picture. Next a free running counter is designed using the ahead operator concept. The snapshot of the free running counter is as shown.
+
+![counter](https://user-images.githubusercontent.com/63381455/123443247-5d0f8700-d5f3-11eb-8c40-f3219e7d0640.png)
+
+Thereafter, the sequential calculator is implemented where the output of the previous stage serves as the input of this stage. The snapshot of the sequential calculator  is included below and the code is provided [here](https://github.com/Geetima2021/RISC-V-Myth-workshop/blob/main/Codes/cal_seq)
+![cal_sequential](https://user-images.githubusercontent.com/63381455/123452217-d57a4600-d5fb-11eb-8b50-a09cec85c7e6.png)
+
+## Pipelining 
+
+Pipelining or timing abstract is an important feature in Makerchip as it can be implemented very easily with fewer codes as compared to system verilog which reduces bugs to a great extent. An example of the pipeling for pythogoras theorem using both TL verilog and system verilog is shown [here](https://github.com/Geetima2021/RISC-V-Myth-workshop/blob/main/Images/pipelining_example.png). In TL verilog pipteling can be implemented by defining the pipeline as |calc and the different pipeline stages should be properly align and are indicated by @1, @2 and so on.
+
+Below the snapshot of the pipeline sequential calcuator is included. Here the first pipeline stage consists of the input followed by arithimetic operation in the second pipeline stage and finally the ouput is included 2 cycles ahead in the third pipeline stage.
+
+![pipeline_calculator](https://user-images.githubusercontent.com/63381455/123455095-f1331b80-d5fe-11eb-84d0-43ead26708ad.png)
