@@ -149,8 +149,17 @@ Thereafter, the sequential calculator is implemented where the output of the pre
 
 ## Pipelining 
 
-Pipelining or timing abstract is an important feature in Makerchip as it can be implemented very easily with fewer codes as compared to system verilog which reduces bugs to a great extent. An example of the pipeling for pythogoras theorem using both TL verilog and system verilog is shown [here](https://github.com/Geetima2021/RISC-V-Myth-workshop/blob/main/Images/pipelining_example.png). In TL verilog pipteling can be implemented by defining the pipeline as |calc and the different pipeline stages should be properly align and are indicated by @1, @2 and so on.
+Pipelining or timing abstract is an important feature in TL verilog as it can be implemented very easily with fewer codes as compared to system verilog which reduces bugs to a great extent. An example of the pipeling for pythogoras theorem using both TL verilog and system verilog is shown [here](https://github.com/Geetima2021/RISC-V-Myth-workshop/blob/main/Images/pipelining_example.png). In TL verilog pipteling can be implemented by defining the pipeline as |calc and the different pipeline stages should be properly align and are indicated by @1, @2 and so on.
 
 Below the snapshot of the pipeline sequential calcuator is included. Here the first pipeline stage consists of the input followed by arithimetic operation in the second pipeline stage and finally the ouput is included 2 cycles ahead in the third pipeline stage.
 
 ![pipeline_calculator](https://user-images.githubusercontent.com/63381455/123455095-f1331b80-d5fe-11eb-84d0-43ead26708ad.png)
+
+## Validity
+
+Validity is another feature in TL verilog which is asserted if a particular transactions in a pipeline is valid or true. A new scope, called “when” scope is introduced for this and it is denoted as `?$valid`. This new scope has many advantages - easier design, cleaner debug, better error chacking and automated clock gating. The snapshot of a validity introduced in 2 cycle calculator is as shown below.
+
+![validity](https://user-images.githubusercontent.com/63381455/123520842-8520e800-d6d0-11eb-88e4-a2e78a1b450d.png)
+
+
+
