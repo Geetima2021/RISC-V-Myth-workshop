@@ -12,6 +12,9 @@
   - [Combinational Calculator](#cal)
   - [Sequential Calculator](#seq)
   - [Pipelining](#pipe)
+  - [Validity](#valid)
+  - [Calculator with memory](#mem)
+- [Basic RISC-V CPU micro-architecture](#archi)
 
 
 # Overview
@@ -161,5 +164,11 @@ Validity is another feature in TL verilog which is asserted if a particular tran
 
 ![validity](https://user-images.githubusercontent.com/63381455/123520842-8520e800-d6d0-11eb-88e4-a2e78a1b450d.png)
 
+## Calculator with memory
 
+Now the memory is added along with the additional recall feature to the 2 cycle calculator. The two highlighted feature is as shown in the snapshot added below. 
+
+![Mem_recall](https://user-images.githubusercontent.com/63381455/123610760-84966780-d81e-11eb-9a72-02b9f777ba7e.jpg)
+
+## Basic RISC-V CPU microarchitecture
 
