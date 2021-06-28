@@ -15,11 +15,12 @@
   - [Validity](#valid)
   - [Calculator with memory](#mem)
 - [Basic RISC-V CPU micro-architecture](#archi)
+  - [Fetch](#fetch)
 
 
 # Overview
 
-The 5 day RISC-V Myth (microprocessor for you in thirty hours) workshop is conducted by [VLSI system design](https://www.vlsisystemdesign.com/riscv-based-myth/?v=a98eef2a3105) and [Redwood EDA](https://www.redwoodeda.com/tl-verilog). This workshop starts from the beginner level of understanding the basic software to hardware integration,by writing a simple c program for the assembly language  program to finally built a RISC-V pipelinened architecture for the same. As VSD has an intelligent cloud based VSDA-IAT platform the entire workshop contents, assessments and initial labs are carried out in the platform itself. Thereafter the TL based Makerchip platform as given in the github repository https://github.com/stevehoover/RISC-V_MYTH_Workshop for RTL implementation of RISC-V core. Prior to the implemantation of the core some simple digital logics along with a calculator was implemented in Makerchip platform for better understanding of the platform and TL verilog.
+The 5 day RISC-V Myth (microprocessor for you in thirty hours) workshop is conducted by [VLSI system design](https://www.vlsisystemdesign.com/riscv-based-myth/?v=a98eef2a3105) and [Redwood EDA](https://www.redwoodeda.com/tl-verilog). This workshop starts from the beginner level of understanding the basic software to hardware integration,by writing a simple c program for the assembly language  program to finally built a RISC-V pipelinened architecture for the same. As VSD has an intelligent cloud based VSD-IAT platform the entire workshop contents, assessments and initial labs are carried out in the platform itself. Thereafter, the TL based Makerchip platform as given in the github repository https://github.com/stevehoover/RISC-V_MYTH_Workshop for RTL implementation of RISC-V core is used. Prior to the implemantation of the core some simple digital logics along with a calculator is implemented in Makerchip platform for better understanding of the platform and TL verilog.
 
 # Introduction to RISC-V ISA
 
@@ -65,7 +66,7 @@ The deassemble file with the highlighted main part of the program  is as shown b
 
 ![objfile](https://user-images.githubusercontent.com/63381455/123098447-c904ba80-d44e-11eb-9606-b08c4fb4c39a.png)
 
-- To use SPIKE simulator to run obj file
+- To use SPIKE simulator to run object file
 
 ```bash
 spike pk <object filename.o>
@@ -78,7 +79,7 @@ The figure below shows the output for sum 1 to 100.
 ```bash
 spike - d pk <object filename.o> 
 ```
-and we can decide the pc till where the debug is done
+and we can decide the pc from where the debug starts
 
 ```bash
 until pc 0 < pc of your choice> 
@@ -88,13 +89,13 @@ and thereafter  any register content can be viewed using the command
 ```bash
 reg 0 <register name>
 ```
-The spike debugger along with a register is as shown below
+The spike debugger along with a register is as shown below-
 
 ![C4](https://user-images.githubusercontent.com/63381455/123113626-513d8c80-d45c-11eb-9af0-5fa579c0920a.png)
 
 Information on the RISC-V options is available in [RISC-V options](https://gcc.gnu.org/onlinedocs/gcc/RISC-V-Options.html) and [here](https://www.sifive.com/blog/all-aboard-part-1-compiler-args).
 
-Also certain nomenlature are also discussed starting from bits to doubleword. The chronological order of the same along with the RISC-V signed number and unsigned number ranges is as shown in the figure below
+Also certain nomenlature are also discussed starting from bits to doubleword. The chronological order of the same along with the RISC-V signed number and unsigned number ranges is as shown in the figure below.
 
 ![I1](https://user-images.githubusercontent.com/63381455/123209636-8a1e4580-d4de-11eb-9b4a-4d9e5fa3b949.png)
 
@@ -160,7 +161,7 @@ Below the snapshot of the pipeline sequential calcuator is included. Here the fi
 
 ## Validity
 
-Validity is another feature in TL verilog which is asserted if a particular transactions in a pipeline is valid or true. A new scope, called “when” scope is introduced for this and it is denoted as `?$valid`. This new scope has many advantages - easier design, cleaner debug, better error chacking and automated clock gating. The snapshot of a validity introduced in 2 cycle calculator is as shown below.
+Validity is another feature in TL verilog which is asserted if a particular transactions in a pipeline is valid or true. A new scope, called “when” scope is introduced for this and it is denoted as `?$valid`. This new scope has many advantages - easier design, cleaner debug, better error checking and automated clock gating. The snapshot of a validity introduced in 2 cycle calculator is as shown below.
 
 ![validity](https://user-images.githubusercontent.com/63381455/123520842-8520e800-d6d0-11eb-88e4-a2e78a1b450d.png)
 
@@ -170,5 +171,20 @@ Now the memory is added along with the additional recall feature to the 2 cycle 
 
 ![Mem_recall](https://user-images.githubusercontent.com/63381455/123610760-84966780-d81e-11eb-9a72-02b9f777ba7e.jpg)
 
-## Basic RISC-V CPU microarchitecture
+# Basic RISC-V CPU microarchitecture
+
+The block diagram of a basic RISC-V microarchitecture is as shown in figure below. Now, using the Makerchip platform the implementation of the RISC-V microarchitecture or core is done. For starting the implementation a starter code present [here](https://github.com/stevehoover/RISC-V_MYTH_Workshop) is used. The starter code consist of -
+
+- A simple RISC-V assembler.
+- An instruction memory containing the sum 1..9 test program.
+- Commented code for register file and memory.
+- Visualization
+
+![RISCV-BD](https://user-images.githubusercontent.com/63381455/123661532-3e5afb80-d852-11eb-8ab9-55629049586b.png)
+
+## Fetch
+
+
+
+
 
