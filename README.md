@@ -17,7 +17,8 @@
 - [Basic RISC-V CPU micro-architecture](#archi)
   - [Fetch](#fetch)
   - [Decode](#decode)
-  - [Register file read](#register)
+  - [Execute and Register file read/write](#register)
+  - [Pipelining the RISC-V microarchitecture](#micro)
 
 
 # Overview
@@ -210,14 +211,24 @@ Following the decoding of the above, the instruction immediate decode for all th
 Below is the snapshot of the entire decode logic.
 ![decode](https://user-images.githubusercontent.com/63381455/123770553-00a8b200-d8e8-11eb-94dc-140962883474.png)
 
-## Register file read and write
+## Execute and Register file read/write
 
-The next task is to 'read from' and 'write into' the registers. In this operation, 2 read and write operation can be carried out simulatenously. The two `src1_value`/`src2_value` takes input from the two read register `rf_read_data1`/ `rf_read_data2` and pass it on to the ALU unit. At present, `ADDI` and `ADD` is implemented whose result is obtained in register `rf_write_data`. The figure below shows the input and output registers.
+The next task is to 'read from' and 'write into' the registers. In this operation, 2 read and write operation can be carried out simulatenously. The two `src1_value`/`src2_value` takes input from the two read register `rf_read_data1`/ `rf_read_data2` and pass it on to the ALU unit. At present, `ADDI` and `ADD` is execute whose result is obtained in register `rf_write_data`. The figure below shows the input and output registers.
 
 ![register](https://user-images.githubusercontent.com/63381455/123816062-a245f880-d914-11eb-952a-214868287994.png)
 
 The snapshot of the read write operation is included below.
 
 ![register_rd_wr](https://user-images.githubusercontent.com/63381455/123816258-ca355c00-d914-11eb-8cce-d645623f9246.jpg)
+
+## Branches 
+
+The next stage in the building of the RISC-V microarchitecture, is the addition of branches. Apart from immediate addition or addition, there may certain other conditions to be satisfied which requires to direct the PC to the branch target address. Now, we have simply added few branch instruction and updated the PC. Below is the snapshot of the same.
+
+![branches](https://user-images.githubusercontent.com/63381455/123837229-3a011200-d928-11eb-86b4-4c8e26310b2b.png)
+
+## Pipelining the RISC-V microarchitecture
+
+
 
 
