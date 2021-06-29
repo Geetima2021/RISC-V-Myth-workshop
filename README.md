@@ -208,10 +208,16 @@ Following the decoding of the above, the instruction immediate decode for all th
 ![instr_format](https://user-images.githubusercontent.com/63381455/123752003-009fb680-d8d6-11eb-8b8e-874c4b1a4872.png)
 
 Below is the snapshot of the entire decode logic.
+![decode](https://user-images.githubusercontent.com/63381455/123770553-00a8b200-d8e8-11eb-94dc-140962883474.png)
 
-![Decode](https://user-images.githubusercontent.com/63381455/123761414-6d6b7e80-d8df-11eb-978a-9ffee9c3641e.png)
+## Register file read and write
 
-## Register file read
+The next task is to 'read from' and 'write into' the registers. In this operation, 2 read and write operation can be carried out simulatenously. The two `src1_value`/`src2_value` takes input from the two read register `rf_read_data1`/ `rf_read_data2` and pass it on to the ALU unit. At present, `ADDI` and `ADD` is implemented whose result is obtained in register `rf_write_data`. The figure below shows the input and output registers.
 
+![register](https://user-images.githubusercontent.com/63381455/123816062-a245f880-d914-11eb-952a-214868287994.png)
+
+The snapshot of the read write operation is included below.
+
+![register_rd_wr](https://user-images.githubusercontent.com/63381455/123816258-ca355c00-d914-11eb-8cce-d645623f9246.jpg)
 
 
