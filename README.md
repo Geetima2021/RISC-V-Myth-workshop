@@ -16,6 +16,7 @@
   - [Calculator with memory](#mem)
 - [Basic RISC-V CPU micro-architecture](#archi)
   - [Fetch](#fetch)
+  - [Decode](#decode)
 
 
 # Overview
@@ -178,12 +179,36 @@ The block diagram of a basic RISC-V microarchitecture is as shown in figure belo
 - A simple RISC-V assembler.
 - An instruction memory containing the sum 1..9 test program.
 - Commented code for register file and memory.
-- Visualization
+- Visualization.
 
 ![RISCV-BD](https://user-images.githubusercontent.com/63381455/123661532-3e5afb80-d852-11eb-8ab9-55629049586b.png)
 
+Designing of processor is based on three core steps fetch, decode and execute.
+
 ## Fetch
 
+During the fetch stage, processors fetches the instruction from the memory to the address pointed by the program counter. The program counters holds the address of the next stage, in our case it is after 4 cycle and the instruction memory holds the set of instruction to be executed. The snapshot of the fetch stage is shown below.
+
+![Fetch](https://user-images.githubusercontent.com/63381455/123745194-8834f780-d8cd-11eb-8514-2ce83838919c.png)
+
+## Decode
+
+For decoding a particular instruction, it is necessary that the isntruction type and format is known to the processor. The decoding is a crucial part and has to be done properly according to the given format to avoid error. There are 6 instructions type in RISC-V :
+
+1. Register (R) type 
+2. Immediate (I) type
+3. Store (S) type
+4. Branch (B) type
+5. Upper immediate  (U) type
+6. Jump (J) type
+
+Following the decoding of the above, the instrution immediate decode for all the the above except for the register type is done. The 6 others instruction format/fields including the opcode, 2 source register, destination register, funct3 and funct7 is done. Next the instruction field decode of the different instruction type is done to ensure that only valid registers are used. Finally the base instruction set decode for the various fields is  done. The instruction type and format is as shown in figure and is sourced from [here](https://en.wikipedia.org/wiki/RISC-V).
+
+![instr_format](https://user-images.githubusercontent.com/63381455/123752003-009fb680-d8d6-11eb-8b8e-874c4b1a4872.png)
+
+Below is the snapshot of the entire decode logic.
+
+![Decode](https://user-images.githubusercontent.com/63381455/123753367-63458200-d8d7-11eb-837e-549afe0a52f8.png)
 
 
 
