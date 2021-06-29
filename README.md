@@ -209,7 +209,7 @@ Following the decoding of the above, the instruction immediate decode for all th
 
 Below is the snapshot of the entire decode logic.
 
-![Decode](https://user-images.githubusercontent.com/63381455/123753367-63458200-d8d7-11eb-837e-549afe0a52f8.png)
+![Decode](https://user-images.githubusercontent.com/63381455/123761414-6d6b7e80-d8df-11eb-978a-9ffee9c3641e.png)
 
 ## Register file read
 
