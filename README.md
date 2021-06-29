@@ -17,6 +17,7 @@
 - [Basic RISC-V CPU micro-architecture](#archi)
   - [Fetch](#fetch)
   - [Decode](#decode)
+  - [Register file read](#register)
 
 
 # Overview
@@ -202,7 +203,7 @@ For decoding a particular instruction, it is necessary that the isntruction type
 5. Upper immediate  (U) type
 6. Jump (J) type
 
-Following the decoding of the above, the instrution immediate decode for all the the above except for the register type is done. The 6 others instruction format/fields including the opcode, 2 source register, destination register, funct3 and funct7 is done. Next the instruction field decode of the different instruction type is done to ensure that only valid registers are used. Finally the base instruction set decode for the various fields is  done. The instruction type and format is as shown in figure and is sourced from [here](https://en.wikipedia.org/wiki/RISC-V).
+Following the decoding of the above, the instruction immediate decode for all the above, except the register type is added. The 6 others instruction format/fields including the opcode, 2 source register, destination register, funct3 and funct7 decode is included. Next the instruction field decode of the different instruction type is inserted to ensure that only valid registers are used. Finally the base instruction set decode for the various fields is incorporated. The instruction type and format is as shown in figure below and is sourced from [here](https://en.wikipedia.org/wiki/RISC-V).
 
 ![instr_format](https://user-images.githubusercontent.com/63381455/123752003-009fb680-d8d6-11eb-8b8e-874c4b1a4872.png)
 
@@ -210,6 +211,7 @@ Below is the snapshot of the entire decode logic.
 
 ![Decode](https://user-images.githubusercontent.com/63381455/123753367-63458200-d8d7-11eb-837e-549afe0a52f8.png)
 
+## Register file read
 
 
 
