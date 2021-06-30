@@ -229,6 +229,9 @@ The next stage in the building of the RISC-V microarchitecture, is the addition 
 
 ## Pipelining the RISC-V microarchitecture
 
+Now pipelining of the CPU core is done, which allows easy retiming and reduces functional bug to a great extent . Pipelining allows faster computaion. For pipelining as mentioned earlier we simply need to add @1, @2 and so on. The snapshot of the pipelining is as shown below. In TL verilog, another advantage is defining of pipeline in systematic order is not necessary. More inforamtion on timming abstract can be found in the IEEE paper "Timing-Abstract Circuit Design in Transaction-Level Verilog"  by Steeve Hoover in makerchip platform itself or else [here](https://ieeexplore.ieee.org/document/8119264).
 
+The snapshot of the pipelined CPU core is included below.
 
+![pipelining](https://user-images.githubusercontent.com/63381455/124005692-ff19df80-d9f6-11eb-9e11-031a0d83e5bd.png)
 
