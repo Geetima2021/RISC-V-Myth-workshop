@@ -19,6 +19,9 @@
   - [Decode](#decode)
   - [Execute and Register file read/write](#register)
   - [Pipelining the RISC-V microarchitecture](#micro)
+  - [Load, store and data memory](#load)
+  - [Completing the RISC-V CPU](#risc)
+- [Acknowledgement](#ack)
 
 
 # Overview
@@ -234,4 +237,22 @@ Now pipelining of the CPU core is done, which allows easy retiming and reduces f
 The snapshot of the pipelined CPU core is included below.
 
 ![pipelining](https://user-images.githubusercontent.com/63381455/124005692-ff19df80-d9f6-11eb-9e11-031a0d83e5bd.png)
+
+## Load, store and data memory
+
+The load and store option is also included for which a 1 read/write data memory is added. Similar to branch instruction the load also has 3 cucle delay. For checking the functionality of load and store instructions a test bench is added and the data is on address 4 of Data Memory and loaded that value from Data Memory to r17. Below is the snapshot of the load store instruction
+
+![load_store](https://user-images.githubusercontent.com/63381455/124103951-6aa78f80-da7f-11eb-9053-2e82dce1b5bf.png)
+
+## Completing the RISC-V CPU
+
+Finally the jump instruction is added and the decode instuction and the ALU for the entire RV32I base integer set is completed. The final snapshot the of the RISC-V CPU core is added below.
+
+![RISCV_CPU](https://user-images.githubusercontent.com/63381455/124103946-69766280-da7f-11eb-8c29-631ea983ccd8.png)
+
+# Acknowledgement
+- [Kunal Ghosh](https://github.com/kunalg123), Co-founder, VSD Corp. Pvt. Ltd.
+- [Steve Hoover](https://github.com/stevehoover), Founder, Redwood EDA
+- [Shivani Shah](https://github.com/shivanishah269), Research scholar, IIITB
+- [Vineet Jain](https://github.com/vineetjain07), GSoC 2020 @fossi-foundation
 
