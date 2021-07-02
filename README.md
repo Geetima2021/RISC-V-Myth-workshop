@@ -253,6 +253,7 @@ Finally the jump instruction is added and the decode instuction and the ALU for 
 # Acknowledgement
 - [Kunal Ghosh](https://github.com/kunalg123), Co-founder, VSD Corp. Pvt. Ltd.
 - [Steve Hoover](https://github.com/stevehoover), Founder, Redwood EDA
-- [Shivani Shah](https://github.com/shivanishah269), Research scholar, IIITB
-- [Vineet Jain](https://github.com/vineetjain07), GSoC 2020 @fossi-foundation
+- [Shivani Shah](https://github.com/shivanishah269),Teaching Assistant, VSD Corp. Pvt. Ltd.
+- [Vineet Jain](https://github.com/vineetjain07), Teaching Assistant, VSD Corp. Pvt. Ltd.
+- [Shivam Poddar](https://github.com/shivampotdar), Teaching Assistant, VSD Corp. Pvt. Ltd.
 
