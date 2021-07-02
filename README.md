@@ -240,7 +240,7 @@ The snapshot of the pipelined CPU core is included below.
 
 ## Load, store and data memory
 
-The load and store option is also included for which a 1 read/write data memory is added. Similar to branch instruction the load also has 3 cucle delay. For checking the functionality of load and store instructions a test bench is added and the data is on address 4 of Data Memory and loaded that value from Data Memory to r17. Below is the snapshot of the load store instruction
+The load and store option is also included for which a 1 read/write data memory is added. Similar to branch instruction the load also has 3 cycle delay. For checking the functionality of load and store instructions a test bench is added and the data is on address 4 of Data Memory and loaded that value from Data Memory to r17. Below is the snapshot of the load store instruction.
 
 ![load_store](https://user-images.githubusercontent.com/63381455/124103951-6aa78f80-da7f-11eb-9053-2e82dce1b5bf.png)
 
